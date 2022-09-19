@@ -34,42 +34,42 @@ section .star
 section .star.star1
 {
   animation-delay: 0s;
-  background: url(Images/star1.png);
+  background: url(star1.png);
 }
 section .star.star2
 {
   animation-delay: -1s;
-  background: url(Images/star2.png);
+  background: url(star2.png);
 }
 section .star.star3
 {
   animation-delay: -2s;
-  background: url(Images/star3.png);
+  background: url(star3.png);
 }
 section .star.star4
 {
   animation-delay: -3s;
-  background: url(Images/star4.png);
+  background: url(star4.png);
 }
 section .star.star5
 {
   animation-delay: -4s;
-  background: url(Images/star5.png);
+  background: url(star5.png);
 }
 section .star.star6
 {
   animation-delay: -5s;
-  background: url(Images/star6.png);
+  background: url(star6.png);
 }
 section .star.star7
 {
   animation-delay: -6s;
-  background: url(Images/star7.png);
+  background: url(star7.png);
 }
 section .star.star8
 {
   animation-delay: -7s;
-  background: url(Images/star8.png);
+  background: url(star8.png);
 }
 @keyframes animate{
   0%,20%,40%,60%,100%{
