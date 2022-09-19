@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root{
+  --clr:#222327;
+}
+.div1
+{
+  width: 33.33%;
+  float: right;
+  position: relative;
+  top: -50px;
+}
+.navigation
+{
+  margin-left: 50px;
+  position: relative;
+  width: 400px;
+  height: 70px;
+  background: transparent;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.navigation ul
+{
+  display: flex;
+  width: 350px;
+}
+.navigation ul li
+{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+}
+.navigation ul li a
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+
+}
+.navigation ul li a .icon
+{
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--clr);
+}
+.navigation ul li.active a .icon
+{
+  transform: translateY(40px);
+}
+.navigation ul li a .text
+{
+  position: absolute;
+  color: var(--clr);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(-27px);
+}
+.navigation ul li.active a .text{
+  opacity: 1;
+  transform: translateY(-12px);
+}
+.indicator
+{
+    position: absolute;
+    bottom: -60%;
+    width: 70px;
+    height: 70px;
+    background: #29fd53;
+    border-radius: 50%;
+    border: 6px solid var(--clr);
+}
+/*To shift the indicator to the selected child*/
+.navigation ul li:nth-child(1).active ~ .indicator
+{
+  transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator
+{
+  transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active ~ .indicator
+{
+  transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active ~ .indicator
+{
+  transform: translateX(calc(70px * 3));
+}
+.div2
+{
+  position: relative;
+  top: -70px;
+  width: 33.33%;
+  float: left;
+}
+.div3
+{
+  width: 33.33%;
+  background-color: transparent;
+  height: 70px;
+  margin: 0 auto;
+}
+/* Navigation Menu Section Over*/
+body{
+  justify-content: center;
+  min-height: 100vh;
+  background: #0c192c;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles
+{
+  z-index: -1;
+  position: relative;
+  display: flex;
+}
+.bubbles span
+{
+  z-index: -1;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #4fc3dc;
+  margin: 0 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #4fc3dc44,
+  0 0 50px #4fc3dc,
+  0 0 100px #4fc3dc;
+  animation: animate 15s linear infinite;
+  animation-duration: calc(130s / var(--i));
+}
+.bubbles span:nth-child(even)
+{
+  background: #ff2d75;
+  box-shadow: 0 0 0 10px #ff2d7544,
+  0 0 50px #ff2d75,
+  0 0 100px #ff2d75;
+}
+@keyframes animate
+{
+  0%
+  {
+    transform: translateY(100vh) scale(0);
+  }
+  100%
+  {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+/*-------------------------------------CSS for Home Page Done----------------------------------------------------------*/
+.container h2
+{
+  position: relative;
+  top: 200px;
+  left: -200px;
+  font-size: 6em;
+  color: #0c192c;
+}
+.container h2::before
+{
+  content: attr(data-text);
+  position: absolute;
+  color: #fff;
+  width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid #fff;
+  animation: textslide 8s linear infinite;
+  filter: drop-shadow(0 0 20px #fff);
+}
+@keyframes textslide{
+  0%,10%,100%
+  {
+    width: 0;
+  }
+  70%,90%{
+      width: 100%;
+  }
+}
+/* ---------------------- CSS for glowing animated text -------------------- */

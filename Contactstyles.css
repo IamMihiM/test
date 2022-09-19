@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+/* CSS section for Starry Background */
+
+section
+{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .star
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: animate 8s ease-in-out infinite,
+             backgroundmove 16s linear infinite;
+}
+section .star.star1
+{
+  animation-delay: 0s;
+  background: url(Images/star1.png);
+}
+section .star.star2
+{
+  animation-delay: -1s;
+  background: url(Images/star2.png);
+}
+section .star.star3
+{
+  animation-delay: -2s;
+  background: url(Images/star3.png);
+}
+section .star.star4
+{
+  animation-delay: -3s;
+  background: url(Images/star4.png);
+}
+section .star.star5
+{
+  animation-delay: -4s;
+  background: url(Images/star5.png);
+}
+section .star.star6
+{
+  animation-delay: -5s;
+  background: url(Images/star6.png);
+}
+section .star.star7
+{
+  animation-delay: -6s;
+  background: url(Images/star7.png);
+}
+section .star.star8
+{
+  animation-delay: -7s;
+  background: url(Images/star8.png);
+}
+@keyframes animate{
+  0%,20%,40%,60%,100%{
+    opacity: 0;
+  }
+  10%,30%,50%,70%,90%{
+    opacity: 1;
+  }
+}
+@keyframes backgroundmove{
+    0%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(2);
+    }
+}
+/* CSS Section for contact form */
+.container .contactInfo
+{
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 350px;
+  height: 40%;
+  background: #095a55;
+  z-index: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+}
+.container .contactInfo h2
+{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+}
+.container .contactInfo ul.Info
+{
+  position: relative;
+  margin: 20px 0;
+}
+.container .contactInfo ul.info li
+{
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 20px 0;
+  cursor: pointer;
+  align-items: flex-start;
+}
+.container .contactInfo ul.info li span:nth-child(1)
+{
+  width: 30px;
+  min-width: 30px;
+}
+.container .contactInfo ul.info li span:nth-child(1) img
+{
+  max-width: 100%;
+  filter: invert(1);
+
+}
+.container .contactInfo ul.info li span:nth-child(2)
+{
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 300;
+
+}
+.container .contactInfo ul.sci
+{
+    position: relative;
+    bottom: -60px;
+    right: -60px;
+    display: flex;
+}
+.container .contactInfo ul.sci li
+{
+  list-style: none;
+  margin-right: 15px;
+}
+/* --------- CSS for Contact INfo ends -------------- */
+section .container .contactInfo .button
+{
+  margin: 30px;
+  font-size: 1.2em;
+  padding: 10px 30px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 50px;
+}
+/* -------------------- CSS for Contact form button ------------------ */
+section .overlay
+{
+  z-index: 1000;
+  position: fixed;
+  top: -6%;
+  left: 20%;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+section .overlay:target
+{
+    visibility: visible;
+    opacity: 1;
+}
+section .wrapper
+{
+  z-index: 1000;
+  margin: 70px auto;
+  padding: 20px;
+  background: #e7e7e7;
+  border-radius: 6px;
+  width: 40%;
+  position: relative;
+  transition: all 4s ease-in-out;
+}
+section .wrapper h2
+{
+  margin-top: 0;
+  color: #333;
+}
+section .wrapper.Close{
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+section .wrapper .content
+{
+  max-height: 30%;
+  overflow: auto;
+}
+
+/* Form Design starts ---------------------------------------*/
+section .cont
+{
+  border-radius: 4px;
+  border-color: #e7e7e7;
+  padding: 20px 0;
+
+}
+section form label
+{
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+section input[type=text], textarea
+{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+section button
+{
+  background-color: #413b3b;
+  color: #fff;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* --------------------------------- */
+section a.btn
+{
+  position: relative;
+  top: -300px;
+  left: -400px;
+  background: transparent;
+  color: #fff;
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  padding: 10px 30px;
+  transition: 0.5s;
+}
+section a.btn:hover
+{
+  letter-spacing: 0.3em;
+  background: var(--clr);
+  box-shadow: 0 0 35px var(--clr);
+}
+section a.btn::before{
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+section a.btn span{
+  position: relative;
+  z-index: 1;
+}

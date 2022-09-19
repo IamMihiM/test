@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+section
+{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section a
+{
+  position: relative;
+  top: -10px;
+  left: 10px;
+  background: transparent;
+  color: #fff;
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  padding: 10px 30px;
+  transition: 0.5s;
+}
+section a:hover
+{
+  letter-spacing: 0.3em;
+  background: var(--clr);
+  box-shadow: 0 0 35px var(--clr);
+}
+section a::before{
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+section a span{
+  position: relative;
+  z-index: 1;
+}
+section h4
+{
+  color: transparent;
+  font-weight: 900;
+  font-size: 8em;
+  -webkit-text-stroke: 2px #fff;
+  text-transform: uppercase;
+}
+section .star
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  animation: animate 8s ease-in-out infinite,
+             backgroundmove 16s linear infinite;
+}
+section .star.star1
+{
+  animation-delay: 0s;
+  background: url(./Images/star1.png);
+}
+section .star.star2
+{
+  animation-delay: -1s;
+  background: url(./Images/star2.png);
+}
+section .star.star3
+{
+  animation-delay: -2s;
+  background: url(./Images/star3.png);
+}
+section .star.star4
+{
+  animation-delay: -3s;
+  background: url(./Images/star4.png);
+}
+section .star.star5
+{
+  animation-delay: -4s;
+  background: url(./Images/star5.png);
+}
+section .star.star6
+{
+  animation-delay: -5s;
+  background: url(./Images/star6.png);
+}
+section .star.star7
+{
+  animation-delay: -6s;
+  background: url(./Images/star7.png);
+}
+section .star.star8
+{
+  animation-delay: -7s;
+  background: url(./Images/star8.png);
+}
+@keyframes animate{
+  0%,20%,40%,60%,100%{
+    opacity: 0;
+  }
+  10%,30%,50%,70%,90%{
+    opacity: 1;
+  }
+}
+@keyframes backgroundmove{
+    0%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(2);
+    }
+}
+/* CSS Section for Card */
+.container
+{
+  position: relative;
+  top: 40px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+.container .card
+{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 140px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+.container .card .content
+{
+  padding: 20px;
+  text-align: center;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.container .card .content img
+{
+  border-radius: 20%;
+}
+.container .card:hover .content
+{
+  transform: translateY(0px);
+  opacity: 1;
+}
+.container .card .content h2
+{
+  position: absolute;
+  top: -100px;
+  right: -10px;
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+.container .card .content h3
+{
+  font-size: 1.8em;
+  color: #fff;
+  z-index: 100;
+}
+.container .card .content p
+{
+  font-size: 1em;
+  color: #fff;
+  font-weight: 200;
+}

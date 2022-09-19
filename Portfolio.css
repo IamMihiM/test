@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+}
+.container
+{
+  position: relative;
+}
+.container .slide-container .slide
+{
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.container .slide-container .slide video
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: fadeIn .4s linear;
+}
+
+@keyframes fadeIn{
+  0%{
+    transform: scale(.5);
+  }
+}
+.container .slide-container .slide .content
+{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background: rgba(0, 0, 0, 0.46);
+  text-align: center;
+}
+.container .slide-container .slide .content h3
+{
+  margin-bottom: 10px;
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: animate .4s linear .4s backwards;
+}
+.container .slide-container .slide .content h4.one
+{
+    padding: 6px 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.30);
+    color: #fff;
+    border: 2px solid #eedd44;
+    border-radius: 8px;
+}
+.container .slide-container .slide .content h4.two
+{
+    margin: 10px;
+    padding: 6px 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.30);
+    color: #fff;
+    border: 2px solid #ff6b08;
+    border-radius: 8px;
+}
+.container .slide-container .slide .content .btn
+{
+  padding: 9px 30px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 30px;
+  transition: .2s linear;
+  animation: animate .4s linear 1s backwards;
+}
+/* ---------------- CSS section for glowing button on mouse hover ------------*/
+.container .slide-container .slide .content a.btn1
+{
+  position: relative;
+  top: -180px;
+  left: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  padding: 10px 30px;
+  transition: 0.5s;
+}
+.container .slide-container .slide .content a.btn1:hover
+{
+  letter-spacing: 0.3em;
+  background: var(--clr);
+  box-shadow: 0 0 35px var(--clr);
+}
+.container .slide-container .slide .content a.btn1::before
+{
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #27282c;
+}
+.container .slide-container .slide .content a.btn1 span
+{
+  position: relative;
+  z-index: 1;
+}
+/* ----------------------- Section for glowing button ends ----------- */
+.container .slide-container .slide .content .btn:hover
+{
+  letter-spacing: 3px;
+}
+@keyframes animate{
+  0%{
+      opacity: 0;
+      transform: scale(.5) translateY(-50px);
+  }
+}
+.container .slide-container
+{
+  display: none;
+}
+.container .slide-container.active
+{
+  display: block;
+}
+.container #next,
+.container #prev{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  height: 50px;
+  width: 50px;
+  line-height: 46px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+}
+.container #next
+{
+    right: 0;
+}
+.container #prev
+{
+  left: 0;
+}
+/* CSS to blur background when Learn More button is clicked */
+.container#blur.active
+{
+  filter: blur(10px);
+  pointer-events: none;
+  user-select: none;
+}
+#popup
+{
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 800px;
+  padding: 50px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.30);
+  border-radius: 10px;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+#popup h4
+{
+  background: #333;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+  border: 2px solid #FFFF00;
+  border-radius: 6px;
+}
+#popup h2
+{
+  position: relative;
+  left: 260px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #f32170,
+                      #ff6b08, #cf23cf, #eedd44);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+}
+#popup.active
+{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+#popup video
+{
+  margin: 10px;
+  position: relative;
+  left: 20px;
+  border: 4px solid #cf23cf;
+}
+#popup p
+{
+  font-family: 'Quicksand', sans-serif;
+  font-weight: normal;
+}
+#popup a
+{
+  position: relative;
+  top: 20px;
+  left: 280px;
+  margin: 10px;
+  padding: 9px 30px;
+  background: #333;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 30px;
+  border-radius: 10px;
+}

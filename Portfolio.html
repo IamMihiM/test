@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Our Games</title>
+    <link rel="stylesheet" href="css/Portfolio.css">
+  </head>
+  <body>
+    <div class="container" id="blur">
+      <div class="slide-container active">
+          <div class="slide">
+            <div class="content">
+              <a class="btn1" href="index.html" style="--clr:#1e9bff"><span>HOME</span><i></i></a>
+              <h3>God Of War</h3>
+                <h4 class="one">Hyper Casual</h4>
+                <h4 class="two">Puzzle</h4>
+                <a btn href="#" class="btn" onclick="toggle()">Learn More</a>
+
+            </div>
+            <video src="Videos/GodOfWar.mp4" muted autoplay loop></video>
+          </div>
+      </div>
+      <div class="slide-container">
+          <div class="slide">
+            <div class="content">
+              <a class="btn1" href="Home.html" style="--clr:#1e9bff"><span>HOME</span><i></i></a>
+              <h3>Tekken 8</h3>
+                <h4 class="one">Action</h4>
+                <h4 class="two">Role Playing Games</h4>
+              <a href="#" class="btn" onclick="toggle()">Learn More</a>
+            </div>
+            <video src="Videos/tekken8.mp4" muted autoplay loop></video>
+          </div>
+      </div>
+      <div class="slide-container">
+          <div class="slide">
+            <div class="content">
+              <a class="btn1" href="Home.html" style="--clr:#1e9bff"><span>HOME</span><i></i></a>
+              <h3>Assassin's Creed</h3>
+              <h4 class="one">Action</h4>
+              <h4 class="two">Role Playing Games</h4>
+              <a href="#" class="btn" onclick="toggle()">Learn More</a>
+            </div>
+            <video src="Videos/GodOfWar.mp4" muted autoplay loop></video>
+          </div>
+      </div>
+      <div class="slide-container">
+          <div class="slide">
+            <div class="content">
+              <a class="btn1" href="Home.html" style="--clr:#1e9bff"><span>HOME</span><i></i></a>
+              <h3>Assassin's Creed 2</h3>
+              <h4 class="one">Action</h4>
+              <h4 class="two">Role Playing Games</h4>
+              <a href="#" class="btn" onclick="toggle()">Learn More</a>
+            </div>
+            <video src="Videos/tekken8.mp4" muted autoplay loop></video>
+          </div>
+      </div>
+      <div class="slide-container">
+          <div class="slide">
+            <div class="content">
+              <a class="btn1" href="Home.html" style="--clr:#1e9bff"><span>HOME</span><i></i></a>
+              <h3>Assassin's Creed 3</h3>
+              <h4 class="one">Action</h4>
+              <h4 class="two">Role Playing Games</h4>
+              <a href="#" class="btn" onclick="toggle()">Learn More</a>
+            </div>
+            <video src="Videos/GodOfWar.mp4" muted autoplay loop></video>
+
+          </div>
+      </div>
+      <div id="next" onclick="next()"> > </div>
+      <div id="prev" onclick="prev()"> < </div>
+    </div>
+
+    <div id="popup">
+      <h2>God Of War</h2>
+      <p>asdad qadsd asd qdasdasdqw 123213 asdsd asd 2e12e addsasda das dasdasd asdasdasd
+        asdasdaffsf 21 12 sadasd21ee21 21edsad21 </p>
+        <video src="Videos/GodOfWar.mp4" controls></video>
+        <a href="#" onclick="toggle()">Close</a>
+    </div>
+    <script type="text/javascript">
+        let slides = document.querySelectorAll('.slide-container');
+        let index = 0;
+
+        function next(){
+          slides[index].classList.remove('active');
+          index = (index + 1)% slides.length;
+          slides[index].classList.add('active');
+        }
+        function prev(){
+          slides[index].classList.remove('active');
+          index = (index - 1 + slides.length)% slides.length;
+          slides[index].classList.add('active');
+        }
+    </script>
+    <script type="text/javascript">
+      function toggle(){
+        var blur = document.getElementById('blur');
+        blur.classList.toggle('active');
+        var popup = document.getElementById('popup');
+        popup.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>
